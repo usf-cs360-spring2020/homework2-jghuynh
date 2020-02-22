@@ -228,16 +228,16 @@ function drawCircleLegend() {
     .shape('circle')
     .cells(5) // I think we want 5 circles
     .ascending(true)
-    .shapePadding(4)
-    .labelOffset(10)
+    .shapePadding(5) // space between each circle
+    .labelOffset(10) // how far away between labels and circles
     .labelFormat("d")
-    .title('Average Cohort Size')
+    .title('Class Size')
     .orient('vertical');
 
   group.call(legendSize);
 
   // fix the title spacing
-  group.select('text.legendTitle').attr('dy', -10);
+  group.select('text.legendTitle').attr('dy', -7);
 
   // note it is harder to get this to be two column using this package
   // we have to select what was drawn and then move it around
@@ -245,12 +245,14 @@ function drawCircleLegend() {
 
 
 // loading dataset
-myDataBubble = d3.csv("CAselectedCols", convertRow).then(draw);
+d3.csv("CAselectedCols.csv", convertRow).then(draw);
 
 /**
 Converts each row into either an integer or a float or a string
 */
 function convertRow(row) {
+  console.log("Inside convert Row");
+  console.log("Row: ", row);
   let keep = {};
   keep.name = row["name"];
   keep.type = +row["type"];
@@ -260,11 +262,41 @@ function convertRow(row) {
   keep.parentMedian = +row["par_median"];
   keep.femaleRatio = parseFloat(row["female"]);
 
+  console.log("Keep: ", keep);
   return keep;
 }
 
 function draw(data) {
   console.log("Hello!")
+  // Okay I could have filtered for only CA colleges by writing
+  // data = data.filter(row => row.state === "CA");
+  // but whatever
+
+  // so bigger circles are under smaller circles
+  data.sort((a, b) => b.count - a.count);
+  drawBubble(data);
+}
+
+/*
+ * draw bubbles
+ */
+function drawBubble(data) {
+  // place all of the bubbles in their own group
+  console.log("Inside draw bubbles!");
+  const group = plot.append('g').attr('id', 'bubbles');
+
+  const bubbles = group.selectAll('circle')
+    .data(data)
+    .enter()
+    .append('circle');
+
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+  bubbles.attr('cx', d => scales.x(d.tier));
+  bubbles.attr('cy', d => scales.y(d.femaleRatio));
+  bubbles.attr('r',  d => scales.r(d.cohortCount));
+
+  bubbles.style('stroke', 'white');
+  bubbles.style('fill', d => scales.fill(d.trend));
 }
 
 /*
