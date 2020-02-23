@@ -47,7 +47,7 @@ scales.fill.domain([10300, (10300 + 85800)/2, 85800]);
 drawAxis();
 drawTitles();
 drawColorLegend();
-drawCircleLegend();
+// drawCircleLegend();
 
 /*
  * create axis lines
@@ -251,8 +251,6 @@ d3.csv("CAselectedCols.csv", convertRow).then(draw);
 Converts each row into either an integer or a float or a string
 */
 function convertRow(row) {
-  console.log("Inside convert Row");
-  console.log("Row: ", row);
   let keep = {};
   keep.name = row["name"];
   keep.type = +row["type"];
@@ -296,7 +294,7 @@ function drawBubble(data) {
   bubbles.attr('r',  d => scales.r(d.cohortCount));
 
   bubbles.style('stroke', 'white');
-  bubbles.style('fill', d => scales.fill(d.trend));
+  bubbles.style('fill', d => scales.fill(d.kidsMedian));
 }
 
 /*
