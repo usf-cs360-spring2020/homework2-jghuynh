@@ -1,167 +1,167 @@
-name,type,tier,count,k_median,par_median,female
-Academy Of Art University,3.0,10,495.66666666666674,27400,92300,0.41425690000000004
-Allan Hancock College,1.0,9,1220.0,30800,65700,0.5262295
-"American Career College of Los Angeles, CA",3.0,11,489.5,25700,30400,0.82431054
-Antelope Valley College,1.0,9,1904.666666666667,25700,66600,0.53972697
-Argosy University,3.0,10,119.0,29700,84000,0.92997199
-Art Center College Of Design,2.0,8,109.5,42800,84800,0.38812786
-Azusa Pacific University,2.0,6,647.0,42100,103700,0.6244204000000001
-Barstow Community College,1.0,9,478.0,28700,58000,0.45327756
-Biola University,2.0,6,535.0,35700,95300,0.63925236
-Brooks Institute,3.0,10,250.16666666666669,30500,95300,0.47634912
-Butte College,1.0,9,1751.0,27300,64100,0.47420523
-Cabrillo College,1.0,9,1641.0,26500,70200,0.49319521
-California Baptist University,2.0,6,197.33333333333331,36200,82600,0.64864862
-California College Of The Arts,2.0,8,123.6666666666667,29700,90100,0.58221024
-California Culinary Academy,3.0,11,154.0,27900,66000,0.38528138
-California Institute Of Technology,2.0,2,190.66666666666669,83000,124500,0.33216783
-California Institute Of The Arts,2.0,8,122.6666666666667,25300,108700,0.45923913
-California Lutheran University,2.0,6,300.0,50900,110600,0.57888889
-California Maritime Academy,1.0,5,92.0,85800,113100,0.15217391
-California Polytechnic State University,1.0,5,2887.666666666667,65500,124800,0.46565855
-"California State Polytechnic University, Pomona",1.0,5,2195.333333333334,55100,80200,0.42013362
-California State University - Sacramento,1.0,5,2041.333333333333,47900,88700,0.58687133
-"California State University, Bakersfield",1.0,5,542.6666666666666,46100,67700,0.64312041
-"California State University, Chico",1.0,5,1895.333333333333,48700,112200,0.56964475
-"California State University, Dominguez Hills",1.0,5,451.33333333333326,40300,45600,0.6971935
-"California State University, East Bay",1.0,5,696.6666666666665,51300,86000,0.65980864
-"California State University, Fresno",1.0,5,1656.333333333333,44400,72400,0.6037431999999999
-"California State University, Fullerton",1.0,5,2374.0,47800,83300,0.61668068
-"California State University, Long Beach",1.0,5,2863.666666666667,48800,85800,0.64032125
-"California State University, Los Angeles",1.0,5,1179.666666666667,43000,36600,0.62447017
-"California State University, Monterey Bay",1.0,5,322.6666666666667,41100,93200,0.58884299
-"California State University, Northridge",1.0,5,2348.666666666667,44100,61100,0.58629012
-"California State University, San Bernardino",1.0,5,1151.666666666667,43500,69800,0.64688855
-"California State University, San Marcos",1.0,5,427.66666666666674,44400,93600,0.61340606
-"California State University, Stanislaus",1.0,5,603.0,44800,72300,0.66887784
-Carrington College California,3.0,11,434.5,25000,47900,0.91599542
-Center For Employment Training,2.0,12,290.0,16300,29300,0.55517244
-Cerritos Community College,1.0,9,3216.0,30200,45500,0.52829599
-Chabot-Las Positas Community College District,1.0,9,2381.666666666667,35200,84000,0.49657103
-Chaffey Community College,1.0,9,2802.666666666667,27700,66300,0.53472883
-Chapman University,2.0,4,603.0,47900,109600,0.57103372
-Citrus Community College,1.0,9,2030.666666666667,28100,66500,0.5257715000000001
-Claremont Mckenna College,2.0,2,266.0,69900,142000,0.46992481
-Coast Community College District,1.0,9,5334.666666666667,30600,72800,0.48081729
-College Of Marin,1.0,9,580.6666666666666,29700,82000,0.44603902
-College Of The Canyons,1.0,9,1868.666666666667,32500,88200,0.47413486
-College Of The Desert,1.0,9,1342.666666666667,28400,44900,0.50893742
-College Of The Redwoods,1.0,9,1064.666666666667,20300,59900,0.50093925
-College Of The Sequoias,1.0,9,1764.666666666667,27500,51500,0.50623345
-College Of The Siskiyous,1.0,9,345.0,27900,57500,0.39806762
-"Concordia University of Irvine, CA",2.0,6,201.0,39600,94000,0.66500831
-Contra Costa Community College District,1.0,9,4957.666666666667,32900,85400,0.48887244
-Copper Mountain College,1.0,9,327.0,27100,50100,0.47808358
-Crimson Technical College,3.0,11,156.0,37600,44700,0.073717952
-Cuesta College,1.0,9,1881.333333333333,31000,79900,0.47643515
-Dominican University Of California,2.0,6,137.66666666666669,45200,98100,0.76029056
-El Camino College,1.0,9,3618.333333333334,28300,51600,0.50492859
-Fashion Institute Of Design & Merchandising,3.0,10,932.5,28200,76300,0.9067023999999999
-Feather River College,1.0,9,179.0,23400,66000,0.46554935
-Foothill-Deanza Community College District,1.0,9,4000.666666666667,33900,80200,0.46625564
-Fresno Pacific University,2.0,6,160.66666666666669,37900,71100,0.69294608
-Gavilan College,1.0,9,588.6666666666666,29800,80500,0.51245755
-Glendale Career College,3.0,12,172.0,17900,33200,0.76550388
-Glendale Community College,1.0,9,1437.0,30500,40100,0.50336349
-Grossmont-Cuyamaca Community College District,1.0,9,3461.0,31700,77400,0.5098719
-Hartnell Community College,1.0,9,1280.0,30500,51800,0.49192709
-Harvey Mudd College,2.0,2,164.0,82400,139800,0.3211382
-Heald College,3.0,11,2428.333333333334,33600,52400,0.49498969
-Humboldt State University,1.0,5,736.6666666666665,35500,96000,0.579638
-Imperial Valley College,1.0,9,885.6666666666665,25800,34300,0.53970641
-International Career Development Center,3.0,11,215.0,16700,29500,0.73023254
-Irvine Valley College,1.0,9,708.3333333333335,30900,81200,0.47858822
-Kern & North Orange County Community College Districts,1.0,9,8556.333333333334,30000,63600,0.51299232
-La Sierra University,2.0,6,205.0,43200,81300,0.57398373
-Lake Tahoe Community College,1.0,9,340.6666666666667,22100,64600,0.49412915
-Las Positas College,1.0,9,988.5,37300,109500,0.48254931
-Lassen College,1.0,9,292.0,23300,64200,0.43493152
-"Le Cordon Bleu College Of Culinary Arts of Pasadena, CA",3.0,11,131.66666666666669,27600,64800,0.37468356
-Long Beach City College,1.0,9,3148.666666666667,28100,49900,0.51969087
-Los Angeles Community College District,1.0,9,8129.333333333332,28400,41400,0.53005576
-Los Rios Community College District,1.0,9,5873.333333333332,31200,71900,0.52304202
-Loyola Marymount University,2.0,6,1016.0,56200,131800,0.585958
-MTI College,3.0,11,98.0,32300,48400,0.62244898
-"Marinello School Of Beauty, Xenon International Academy, International School Of Skin And Nailcare And Hair Professionals Academy",3.0,12,591.3333333333334,11400,44200,0.94475758
-Marymount California University,2.0,8,110.0,31300,104900,0.5090909
-Master's College & Seminary ,2.0,6,213.66666666666669,30700,87700,0.56162244
-Mendocino College,1.0,9,482.0,21400,51900,0.5
-Merced Community College,1.0,9,1336.333333333333,25400,48400,0.53629333
-"Milan Institute of Palm Desert, CA",3.0,12,242.0,19000,35800,0.88636363
-Mills College,2.0,6,115.0,40200,79100,0.99130434
-Miracosta College,1.0,9,1413.333333333333,26500,71200,0.52759433
-Monterey Peninsula College,1.0,9,722.3333333333335,27200,66100,0.5034609999999999
-Mount San Antonio College,1.0,9,4660.0,30800,62800,0.48977109999999996
-Mount St. Mary's College,2.0,6,222.33333333333331,44900,48500,0.9880059999999999
-Mt. San Jacinto College,1.0,9,1448.0,25100,71000,0.53867406
-Musicians Institute,3.0,10,170.5,15500,77400,0.18768328
-Napa Valley College,1.0,9,837.0,33700,75000,0.55396259
-Occidental College,2.0,2,380.0,49000,122400,0.58859646
-Ohlone College,1.0,9,1059.333333333333,38500,91100,0.49213341
-Otis College Of Art & Design,2.0,8,124.0,47600,80500,0.71774191
-Pacific Union College,2.0,6,233.0,50700,96400,0.53648067
-Palomar College,1.0,9,3595.333333333334,31500,73500,0.45484889
-Pasadena City College,1.0,9,3321.333333333334,29500,44600,0.49638699999999997
-"Paul Mitchell The School of Costa Mesa, CA",3.0,12,227.0,10300,85200,0.92290747
-Pepperdine University,2.0,4,569.3333333333334,55800,124100,0.5942623
-Pitzer College,2.0,4,192.0,43500,131900,0.61979169
-"Platt College of Alhambra, CA",3.0,10,99.66666666666669,24500,48500,0.36789298
-Point Loma Nazarene University,2.0,6,501.66666666666674,45900,113300,0.59933555
-Pomona College,2.0,2,369.33333333333326,62000,161600,0.49638990000000005
-Rancho Santiago Community College District,1.0,9,2269.333333333334,33700,63600,0.46768507
-Rio Hondo Community College,1.0,9,1545.333333333333,32400,46500,0.47260571
-Riverside Community College District,1.0,9,3868.333333333334,28800,70800,0.52399826
-Saddleback College,1.0,9,2124.666666666667,31100,100600,0.46219015
-Saint Mary's College Of California,2.0,6,509.66666666666674,55200,110500,0.60431653
-San Bernardino Community College District,1.0,9,2298.666666666667,25900,55000,0.51609629
-San Diego Community College District,1.0,9,4152.666666666667,30900,63200,0.49277574
-San Diego State University,1.0,5,3196.333333333334,51000,100500,0.58817393
-San Francisco Community College District,1.0,9,2076.333333333334,33000,53400,0.48466849
-San Francisco State University,1.0,5,1854.666666666667,45800,87200,0.61682242
-San Joaquin Delta College,1.0,9,2258.666666666667,30700,66300,0.51948053
-San Joaquin Valley College,3.0,11,536.5,21500,36000,0.74464118
-San Jose State University,1.0,5,2182.333333333334,56500,91700,0.50756073
-San Jose-Evergreen Community College District,1.0,9,1523.0,31900,67900,0.51400745
-San Mateo County Community College District,1.0,9,2601.666666666667,37800,77000,0.47713006
-Santa Barbara Business College,3.0,10,167.0,17100,39400,0.85329342
-Santa Barbara City College,1.0,9,1827.0,31400,86100,0.44645137
-Santa Clara University,2.0,4,989.6666666666665,72500,149900,0.55001682
-Santa Monica College,1.0,9,2886.666666666667,28800,51300,0.49364895
-Santa Rosa Junior College,1.0,9,2559.333333333334,31600,80900,0.49257618
-Scripps College,2.0,2,185.0,46400,126300,0.99459457
-Sierra College,1.0,9,2786.333333333334,30900,85900,0.48725924
-Simpson University,2.0,6,161.0,27800,72700,0.63975155
-Solano Community College,1.0,9,1518.333333333333,34300,84300,0.51152581
-Sonoma State University,1.0,5,907.6666666666665,46400,113700,0.65846491
-Southwestern Community College District,1.0,9,2576.5,28200,54200,0.49990296
-Stanford University,2.0,1,1516.333333333333,84800,172600,0.50714445
-State Center Community College District,1.0,9,5160.0,25200,47600,0.50342375
-Summit College,3.0,12,160.0,20800,39600,0.86250001
-Taft College,1.0,9,153.5,32300,62300,0.54723126
-United Education Institute,3.0,11,1165.0,19100,29600,0.74391991
-"Universal Technical Institute of Rancho Cucamonga, CA",3.0,11,2105.0,41300,62900,0.020585906
-"University Of California, Berkeley",1.0,3,4624.333333333333,67900,114700,0.53369856
-"University Of California, Davis",1.0,5,3996.0,61600,109400,0.58041376
-"University Of California, Irvine",1.0,3,3244.333333333334,60400,92100,0.52984691
-"University Of California, Los Angeles",1.0,2,4734.0,65800,105500,0.56020278
-"University Of California, Riverside",1.0,5,2364.333333333334,52800,75000,0.55040181
-"University Of California, San Diego",1.0,3,3264.666666666667,65300,111300,0.53971821
-"University Of California, Santa Barbara",1.0,3,3450.333333333334,58800,124000,0.56352043
-"University Of California, Santa Cruz",1.0,5,2341.666666666667,46100,115400,0.56711745
-University Of La Verne,2.0,6,285.3333333333333,48600,72300,0.63200933
-University Of Redlands,2.0,6,397.33333333333326,47700,108400,0.57885903
-University Of San Diego,2.0,4,894.0,61200,139300,0.64205819
-University Of San Francisco,2.0,6,606.3333333333334,56900,106900,0.66355139
-University Of Southern California,2.0,2,3052.666666666667,63700,120100,0.50873554
-University Of The Pacific,2.0,6,617.6666666666666,59000,96500,0.60280627
-Vanguard University Of Southern California,2.0,6,240.33333333333331,32900,83200,0.62135923
-Ventura County Community College District,1.0,9,4747.333333333333,30600,73700,0.49613819
-Victor Valley Community College,1.0,9,1378.666666666667,25200,62600,0.52441972
-West Hills Community College District,1.0,9,808.0,25600,46100,0.54146039
-West Valley-Mission Community College District,1.0,9,1567.333333333333,36700,91600,0.47596768
-Westmont College,2.0,4,296.6666666666667,47600,132100,0.65056181
-Westwood College - Los Angeles,3.0,10,412.5,26400,37800,0.39515153
-Whittier College,2.0,6,251.0,47900,98500,0.56440902
-Woodbury University,2.0,6,115.6666666666667,44300,61900,0.61095101
-Yosemite Community College District,1.0,9,2879.0,28900,66400,0.50827831
-Yuba Community College District,1.0,9,1240.666666666667,25400,48700,0.55292851
+name,type,tier,tier_name,count,k_median,par_median,female
+Academy Of Art University,3.0,10,Four-year for-profit,495.66666666666674,27400,92300,0.41425690000000004
+Allan Hancock College,1.0,9,Two-year (public and private not-for-profit),1220.0,30800,65700,0.5262295
+"American Career College of Los Angeles, CA",3.0,11,Two-year for-profit,489.5,25700,30400,0.82431054
+Antelope Valley College,1.0,9,Two-year (public and private not-for-profit),1904.666666666667,25700,66600,0.53972697
+Argosy University,3.0,10,Four-year for-profit,119.0,29700,84000,0.92997199
+Art Center College Of Design,2.0,8,Nonselective four-year private not-for-profit,109.5,42800,84800,0.38812786
+Azusa Pacific University,2.0,6,Selective private,647.0,42100,103700,0.6244204000000001
+Barstow Community College,1.0,9,Two-year (public and private not-for-profit),478.0,28700,58000,0.45327756
+Biola University,2.0,6,Selective private,535.0,35700,95300,0.63925236
+Brooks Institute,3.0,10,Four-year for-profit,250.16666666666669,30500,95300,0.47634912
+Butte College,1.0,9,Two-year (public and private not-for-profit),1751.0,27300,64100,0.47420523
+Cabrillo College,1.0,9,Two-year (public and private not-for-profit),1641.0,26500,70200,0.49319521
+California Baptist University,2.0,6,Selective private,197.33333333333331,36200,82600,0.64864862
+California College Of The Arts,2.0,8,Nonselective four-year private not-for-profit,123.6666666666667,29700,90100,0.58221024
+California Culinary Academy,3.0,11,Two-year for-profit,154.0,27900,66000,0.38528138
+California Institute Of Technology,2.0,2,Other elite schools (public and private),190.66666666666669,83000,124500,0.33216783
+California Institute Of The Arts,2.0,8,Nonselective four-year private not-for-profit,122.6666666666667,25300,108700,0.45923913
+California Lutheran University,2.0,6,Selective private,300.0,50900,110600,0.57888889
+California Maritime Academy,1.0,5,Selective public,92.0,85800,113100,0.15217391
+California Polytechnic State University,1.0,5,Selective public,2887.666666666667,65500,124800,0.46565855
+"California State Polytechnic University, Pomona",1.0,5,Selective public,2195.333333333334,55100,80200,0.42013362
+California State University - Sacramento,1.0,5,Selective public,2041.333333333333,47900,88700,0.58687133
+"California State University, Bakersfield",1.0,5,Selective public,542.6666666666666,46100,67700,0.64312041
+"California State University, Chico",1.0,5,Selective public,1895.333333333333,48700,112200,0.56964475
+"California State University, Dominguez Hills",1.0,5,Selective public,451.33333333333326,40300,45600,0.6971935
+"California State University, East Bay",1.0,5,Selective public,696.6666666666665,51300,86000,0.65980864
+"California State University, Fresno",1.0,5,Selective public,1656.333333333333,44400,72400,0.6037431999999999
+"California State University, Fullerton",1.0,5,Selective public,2374.0,47800,83300,0.61668068
+"California State University, Long Beach",1.0,5,Selective public,2863.666666666667,48800,85800,0.64032125
+"California State University, Los Angeles",1.0,5,Selective public,1179.666666666667,43000,36600,0.62447017
+"California State University, Monterey Bay",1.0,5,Selective public,322.6666666666667,41100,93200,0.58884299
+"California State University, Northridge",1.0,5,Selective public,2348.666666666667,44100,61100,0.58629012
+"California State University, San Bernardino",1.0,5,Selective public,1151.666666666667,43500,69800,0.64688855
+"California State University, San Marcos",1.0,5,Selective public,427.66666666666674,44400,93600,0.61340606
+"California State University, Stanislaus",1.0,5,Selective public,603.0,44800,72300,0.66887784
+Carrington College California,3.0,11,Two-year for-profit,434.5,25000,47900,0.91599542
+Center For Employment Training,2.0,12,Less than two-year schools of any type,290.0,16300,29300,0.55517244
+Cerritos Community College,1.0,9,Two-year (public and private not-for-profit),3216.0,30200,45500,0.52829599
+Chabot-Las Positas Community College District,1.0,9,Two-year (public and private not-for-profit),2381.666666666667,35200,84000,0.49657103
+Chaffey Community College,1.0,9,Two-year (public and private not-for-profit),2802.666666666667,27700,66300,0.53472883
+Chapman University,2.0,4,Highly selective private,603.0,47900,109600,0.57103372
+Citrus Community College,1.0,9,Two-year (public and private not-for-profit),2030.666666666667,28100,66500,0.5257715000000001
+Claremont Mckenna College,2.0,2,Other elite schools (public and private),266.0,69900,142000,0.46992481
+Coast Community College District,1.0,9,Two-year (public and private not-for-profit),5334.666666666667,30600,72800,0.48081729
+College Of Marin,1.0,9,Two-year (public and private not-for-profit),580.6666666666666,29700,82000,0.44603902
+College Of The Canyons,1.0,9,Two-year (public and private not-for-profit),1868.666666666667,32500,88200,0.47413486
+College Of The Desert,1.0,9,Two-year (public and private not-for-profit),1342.666666666667,28400,44900,0.50893742
+College Of The Redwoods,1.0,9,Two-year (public and private not-for-profit),1064.666666666667,20300,59900,0.50093925
+College Of The Sequoias,1.0,9,Two-year (public and private not-for-profit),1764.666666666667,27500,51500,0.50623345
+College Of The Siskiyous,1.0,9,Two-year (public and private not-for-profit),345.0,27900,57500,0.39806762
+"Concordia University of Irvine, CA",2.0,6,Selective private,201.0,39600,94000,0.66500831
+Contra Costa Community College District,1.0,9,Two-year (public and private not-for-profit),4957.666666666667,32900,85400,0.48887244
+Copper Mountain College,1.0,9,Two-year (public and private not-for-profit),327.0,27100,50100,0.47808358
+Crimson Technical College,3.0,11,Two-year for-profit,156.0,37600,44700,0.073717952
+Cuesta College,1.0,9,Two-year (public and private not-for-profit),1881.333333333333,31000,79900,0.47643515
+Dominican University Of California,2.0,6,Selective private,137.66666666666669,45200,98100,0.76029056
+El Camino College,1.0,9,Two-year (public and private not-for-profit),3618.333333333334,28300,51600,0.50492859
+Fashion Institute Of Design & Merchandising,3.0,10,Four-year for-profit,932.5,28200,76300,0.9067023999999999
+Feather River College,1.0,9,Two-year (public and private not-for-profit),179.0,23400,66000,0.46554935
+Foothill-Deanza Community College District,1.0,9,Two-year (public and private not-for-profit),4000.666666666667,33900,80200,0.46625564
+Fresno Pacific University,2.0,6,Selective private,160.66666666666669,37900,71100,0.69294608
+Gavilan College,1.0,9,Two-year (public and private not-for-profit),588.6666666666666,29800,80500,0.51245755
+Glendale Career College,3.0,12,Less than two-year schools of any type,172.0,17900,33200,0.76550388
+Glendale Community College,1.0,9,Two-year (public and private not-for-profit),1437.0,30500,40100,0.50336349
+Grossmont-Cuyamaca Community College District,1.0,9,Two-year (public and private not-for-profit),3461.0,31700,77400,0.5098719
+Hartnell Community College,1.0,9,Two-year (public and private not-for-profit),1280.0,30500,51800,0.49192709
+Harvey Mudd College,2.0,2,Other elite schools (public and private),164.0,82400,139800,0.3211382
+Heald College,3.0,11,Two-year for-profit,2428.333333333334,33600,52400,0.49498969
+Humboldt State University,1.0,5,Selective public,736.6666666666665,35500,96000,0.579638
+Imperial Valley College,1.0,9,Two-year (public and private not-for-profit),885.6666666666665,25800,34300,0.53970641
+International Career Development Center,3.0,11,Two-year for-profit,215.0,16700,29500,0.73023254
+Irvine Valley College,1.0,9,Two-year (public and private not-for-profit),708.3333333333335,30900,81200,0.47858822
+Kern & North Orange County Community College Districts,1.0,9,Two-year (public and private not-for-profit),8556.333333333334,30000,63600,0.51299232
+La Sierra University,2.0,6,Selective private,205.0,43200,81300,0.57398373
+Lake Tahoe Community College,1.0,9,Two-year (public and private not-for-profit),340.6666666666667,22100,64600,0.49412915
+Las Positas College,1.0,9,Two-year (public and private not-for-profit),988.5,37300,109500,0.48254931
+Lassen College,1.0,9,Two-year (public and private not-for-profit),292.0,23300,64200,0.43493152
+"Le Cordon Bleu College Of Culinary Arts of Pasadena, CA",3.0,11,Two-year for-profit,131.66666666666669,27600,64800,0.37468356
+Long Beach City College,1.0,9,Two-year (public and private not-for-profit),3148.666666666667,28100,49900,0.51969087
+Los Angeles Community College District,1.0,9,Two-year (public and private not-for-profit),8129.333333333332,28400,41400,0.53005576
+Los Rios Community College District,1.0,9,Two-year (public and private not-for-profit),5873.333333333332,31200,71900,0.52304202
+Loyola Marymount University,2.0,6,Selective private,1016.0,56200,131800,0.585958
+MTI College,3.0,11,Two-year for-profit,98.0,32300,48400,0.62244898
+"Marinello School Of Beauty, Xenon International Academy, International School Of Skin And Nailcare And Hair Professionals Academy",3.0,12,Less than two-year schools of any type,591.3333333333334,11400,44200,0.94475758
+Marymount California University,2.0,8,Nonselective four-year private not-for-profit,110.0,31300,104900,0.5090909
+Master's College & Seminary ,2.0,6,Selective private,213.66666666666669,30700,87700,0.56162244
+Mendocino College,1.0,9,Two-year (public and private not-for-profit),482.0,21400,51900,0.5
+Merced Community College,1.0,9,Two-year (public and private not-for-profit),1336.333333333333,25400,48400,0.53629333
+"Milan Institute of Palm Desert, CA",3.0,12,Less than two-year schools of any type,242.0,19000,35800,0.88636363
+Mills College,2.0,6,Selective private,115.0,40200,79100,0.99130434
+Miracosta College,1.0,9,Two-year (public and private not-for-profit),1413.333333333333,26500,71200,0.52759433
+Monterey Peninsula College,1.0,9,Two-year (public and private not-for-profit),722.3333333333335,27200,66100,0.5034609999999999
+Mount San Antonio College,1.0,9,Two-year (public and private not-for-profit),4660.0,30800,62800,0.48977109999999996
+Mount St. Mary's College,2.0,6,Selective private,222.33333333333331,44900,48500,0.9880059999999999
+Mt. San Jacinto College,1.0,9,Two-year (public and private not-for-profit),1448.0,25100,71000,0.53867406
+Musicians Institute,3.0,10,Four-year for-profit,170.5,15500,77400,0.18768328
+Napa Valley College,1.0,9,Two-year (public and private not-for-profit),837.0,33700,75000,0.55396259
+Occidental College,2.0,2,Other elite schools (public and private),380.0,49000,122400,0.58859646
+Ohlone College,1.0,9,Two-year (public and private not-for-profit),1059.333333333333,38500,91100,0.49213341
+Otis College Of Art & Design,2.0,8,Nonselective four-year private not-for-profit,124.0,47600,80500,0.71774191
+Pacific Union College,2.0,6,Selective private,233.0,50700,96400,0.53648067
+Palomar College,1.0,9,Two-year (public and private not-for-profit),3595.333333333334,31500,73500,0.45484889
+Pasadena City College,1.0,9,Two-year (public and private not-for-profit),3321.333333333334,29500,44600,0.49638699999999997
+"Paul Mitchell The School of Costa Mesa, CA",3.0,12,Less than two-year schools of any type,227.0,10300,85200,0.92290747
+Pepperdine University,2.0,4,Highly selective private,569.3333333333334,55800,124100,0.5942623
+Pitzer College,2.0,4,Highly selective private,192.0,43500,131900,0.61979169
+"Platt College of Alhambra, CA",3.0,10,Four-year for-profit,99.66666666666669,24500,48500,0.36789298
+Point Loma Nazarene University,2.0,6,Selective private,501.66666666666674,45900,113300,0.59933555
+Pomona College,2.0,2,Other elite schools (public and private),369.33333333333326,62000,161600,0.49638990000000005
+Rancho Santiago Community College District,1.0,9,Two-year (public and private not-for-profit),2269.333333333334,33700,63600,0.46768507
+Rio Hondo Community College,1.0,9,Two-year (public and private not-for-profit),1545.333333333333,32400,46500,0.47260571
+Riverside Community College District,1.0,9,Two-year (public and private not-for-profit),3868.333333333334,28800,70800,0.52399826
+Saddleback College,1.0,9,Two-year (public and private not-for-profit),2124.666666666667,31100,100600,0.46219015
+Saint Mary's College Of California,2.0,6,Selective private,509.66666666666674,55200,110500,0.60431653
+San Bernardino Community College District,1.0,9,Two-year (public and private not-for-profit),2298.666666666667,25900,55000,0.51609629
+San Diego Community College District,1.0,9,Two-year (public and private not-for-profit),4152.666666666667,30900,63200,0.49277574
+San Diego State University,1.0,5,Selective public,3196.333333333334,51000,100500,0.58817393
+San Francisco Community College District,1.0,9,Two-year (public and private not-for-profit),2076.333333333334,33000,53400,0.48466849
+San Francisco State University,1.0,5,Selective public,1854.666666666667,45800,87200,0.61682242
+San Joaquin Delta College,1.0,9,Two-year (public and private not-for-profit),2258.666666666667,30700,66300,0.51948053
+San Joaquin Valley College,3.0,11,Two-year for-profit,536.5,21500,36000,0.74464118
+San Jose State University,1.0,5,Selective public,2182.333333333334,56500,91700,0.50756073
+San Jose-Evergreen Community College District,1.0,9,Two-year (public and private not-for-profit),1523.0,31900,67900,0.51400745
+San Mateo County Community College District,1.0,9,Two-year (public and private not-for-profit),2601.666666666667,37800,77000,0.47713006
+Santa Barbara Business College,3.0,10,Four-year for-profit,167.0,17100,39400,0.85329342
+Santa Barbara City College,1.0,9,Two-year (public and private not-for-profit),1827.0,31400,86100,0.44645137
+Santa Clara University,2.0,4,Highly selective private,989.6666666666665,72500,149900,0.55001682
+Santa Monica College,1.0,9,Two-year (public and private not-for-profit),2886.666666666667,28800,51300,0.49364895
+Santa Rosa Junior College,1.0,9,Two-year (public and private not-for-profit),2559.333333333334,31600,80900,0.49257618
+Scripps College,2.0,2,Other elite schools (public and private),185.0,46400,126300,0.99459457
+Sierra College,1.0,9,Two-year (public and private not-for-profit),2786.333333333334,30900,85900,0.48725924
+Simpson University,2.0,6,Selective private,161.0,27800,72700,0.63975155
+Solano Community College,1.0,9,Two-year (public and private not-for-profit),1518.333333333333,34300,84300,0.51152581
+Sonoma State University,1.0,5,Selective public,907.6666666666665,46400,113700,0.65846491
+Southwestern Community College District,1.0,9,Two-year (public and private not-for-profit),2576.5,28200,54200,0.49990296
+Stanford University,2.0,1,Ivy Plus,1516.333333333333,84800,172600,0.50714445
+State Center Community College District,1.0,9,Two-year (public and private not-for-profit),5160.0,25200,47600,0.50342375
+Summit College,3.0,12,Less than two-year schools of any type,160.0,20800,39600,0.86250001
+Taft College,1.0,9,Two-year (public and private not-for-profit),153.5,32300,62300,0.54723126
+United Education Institute,3.0,11,Two-year for-profit,1165.0,19100,29600,0.74391991
+"Universal Technical Institute of Rancho Cucamonga, CA",3.0,11,Two-year for-profit,2105.0,41300,62900,0.020585906
+"University Of California, Berkeley",1.0,3,Highly selective public,4624.333333333333,67900,114700,0.53369856
+"University Of California, Davis",1.0,5,Selective public,3996.0,61600,109400,0.58041376
+"University Of California, Irvine",1.0,3,Highly selective public,3244.333333333334,60400,92100,0.52984691
+"University Of California, Los Angeles",1.0,2,Other elite schools (public and private),4734.0,65800,105500,0.56020278
+"University Of California, Riverside",1.0,5,Selective public,2364.333333333334,52800,75000,0.55040181
+"University Of California, San Diego",1.0,3,Highly selective public,3264.666666666667,65300,111300,0.53971821
+"University Of California, Santa Barbara",1.0,3,Highly selective public,3450.333333333334,58800,124000,0.56352043
+"University Of California, Santa Cruz",1.0,5,Selective public,2341.666666666667,46100,115400,0.56711745
+University Of La Verne,2.0,6,Selective private,285.3333333333333,48600,72300,0.63200933
+University Of Redlands,2.0,6,Selective private,397.33333333333326,47700,108400,0.57885903
+University Of San Diego,2.0,4,Highly selective private,894.0,61200,139300,0.64205819
+University Of San Francisco,2.0,6,Selective private,606.3333333333334,56900,106900,0.66355139
+University Of Southern California,2.0,2,Other elite schools (public and private),3052.666666666667,63700,120100,0.50873554
+University Of The Pacific,2.0,6,Selective private,617.6666666666666,59000,96500,0.60280627
+Vanguard University Of Southern California,2.0,6,Selective private,240.33333333333331,32900,83200,0.62135923
+Ventura County Community College District,1.0,9,Two-year (public and private not-for-profit),4747.333333333333,30600,73700,0.49613819
+Victor Valley Community College,1.0,9,Two-year (public and private not-for-profit),1378.666666666667,25200,62600,0.52441972
+West Hills Community College District,1.0,9,Two-year (public and private not-for-profit),808.0,25600,46100,0.54146039
+West Valley-Mission Community College District,1.0,9,Two-year (public and private not-for-profit),1567.333333333333,36700,91600,0.47596768
+Westmont College,2.0,4,Highly selective private,296.6666666666667,47600,132100,0.65056181
+Westwood College - Los Angeles,3.0,10,Four-year for-profit,412.5,26400,37800,0.39515153
+Whittier College,2.0,6,Selective private,251.0,47900,98500,0.56440902
+Woodbury University,2.0,6,Selective private,115.6666666666667,44300,61900,0.61095101
+Yosemite Community College District,1.0,9,Two-year (public and private not-for-profit),2879.0,28900,66400,0.50827831
+Yuba Community College District,1.0,9,Two-year (public and private not-for-profit),1240.666666666667,25400,48700,0.55292851
