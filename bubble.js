@@ -29,7 +29,7 @@ const scales = {
 };
 
 //  The domains
-scales.x.range([0, width - margin.left - margin.right-150]);
+scales.x.range([0, width - margin.left - margin.right - 150]);
 // need to subtract 250 because, need more horizontal space
 // for the legend to take up.
 // We don't want the legend to actually be on the chart.
@@ -251,6 +251,7 @@ d3.csv("CAselectedCols.csv", convertRow).then(draw);
 Converts each row into either an integer or a float or a string
 */
 function convertRow(row) {
+
   let keep = {};
   keep.name = row["name"];
   keep.type = +row["type"];
@@ -290,6 +291,7 @@ function drawBubble(data) {
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
   bubbles.attr('cx', d => scales.x(d.tier));
+  // bubbles.attrs("cx", d => d.tier);
   bubbles.attr('cy', d => scales.y(d.femaleRatio));
   bubbles.attr('r',  d => scales.r(d.cohortCount));
 
