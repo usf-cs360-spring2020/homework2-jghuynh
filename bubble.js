@@ -246,7 +246,6 @@ function drawCircleLegend() {
 }
 
 function drawBigTitle() {
-  console.log("In big title:");
   svg.append("text")
         .attr("x", (width / 2))
         .attr("y",  (margin.top / 2 + 9)) // dam the title is waaay to high
@@ -254,7 +253,6 @@ function drawBigTitle() {
         .style("font-size", "20px")
         // .style("text-decoration", "underline")
         .text("Female Ratios And Kids' Median Salaries Among Different College Tiers And Class Sizes");
-  console.log("End of big title.");
 }
 
 // loading dataset
@@ -292,7 +290,6 @@ function draw(data) {
  */
 function drawBubble(data) {
   // place all of the bubbles in their own group
-  console.log("Inside draw bubbles!");
   const group = plot.append('g').attr('id', 'bubbles');
 
   const bubbles = group.selectAll('circle')
