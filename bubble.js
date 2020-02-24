@@ -35,7 +35,7 @@ scales.x.range([0, width - margin.left - margin.right - 150]);
 // We don't want the legend to actually be on the chart.
 scales.x.domain([0, 13]);
 scales.y.range([height - margin.top - margin.bottom, 0]);
-scales.y.domain([0, 1]);
+scales.y.domain([0, 1]); // female ratio from 0 to 1
 
 // TODO: change these later
 // messes with the ranges of what r = radius can be
@@ -48,6 +48,7 @@ drawAxis();
 drawTitles();
 drawColorLegend();
 // drawCircleLegend();
+drawBigTitle();
 
 /*
  * create axis lines
@@ -126,6 +127,8 @@ function drawColorLegend() {
 
   const title = group.append('text')
     .attr('class', 'axis-title')
+    .attr("y", 5) // sorry, shift color legend title down by 5 just
+    // to make room for the title...
     .text("Kids' Median Salaries");
 
   title.attr('dy', 12)
@@ -221,7 +224,6 @@ function drawCircleLegend() {
 
   // position legend
   group.attr('transform', translate(width - margin.right - legendWidth, margin.top + 75))
-  console.log("group: ", group);
   // https://d3-legend.susielu.com/#size-linear
   const legendSize = d3.legendSize()
     .scale(scales.r)
@@ -243,6 +245,17 @@ function drawCircleLegend() {
   // we have to select what was drawn and then move it around
 }
 
+function drawBigTitle() {
+  console.log("In big title:");
+  svg.append("text")
+        .attr("x", (width / 2))
+        .attr("y",  (margin.top / 2 + 9)) // dam the title is waaay to high
+        .attr("text-anchor", "middle")
+        .style("font-size", "20px")
+        // .style("text-decoration", "underline")
+        .text("Female Ratios And Kids' Median Salaries Among Different College Tiers And Class Sizes");
+  console.log("End of big title.");
+}
 
 // loading dataset
 d3.csv("CAselectedCols.csv", convertRow).then(draw);
@@ -261,12 +274,10 @@ function convertRow(row) {
   keep.parentMedian = +row["par_median"];
   keep.femaleRatio = parseFloat(row["female"]);
 
-  console.log("Keep: ", keep);
   return keep;
 }
 
 function draw(data) {
-  console.log("Hello!")
   // Okay I could have filtered for only CA colleges by writing
   // data = data.filter(row => row.state === "CA");
   // but whatever
