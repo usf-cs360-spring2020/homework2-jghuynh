@@ -30,41 +30,86 @@ heatMapSVG
   // add plot region
 const heatMapPlot = heatMapSVG.append("g").attr("id", "plot");
 
-dataset = d3.csv("CAselectedCols.csv");
-console.log("dataset: ", dataset);
+dataset = d3.csv("CAselectedCols.csv", addToMap).then(
+  function (data) {
+    console.log("in the then function");
+  }
+);
+// anotherset = d3.csv("CAselectedCols.csv").then(function(data) {
+//   console.log(anotherset);
+// });
+// });
+
+// dataset.forEach( function (entry) {
+console.log("dataset:", dataset);
+//dataset.forEach( addToMap);
 heatmapData = [];
 tiernames = [];
+function addToMap (entry) {
 
-dataset.forEach( function (entry) {
-  let myTierName = entry.tier_name
+  let myTierName = entry.tier_name;
+  // if we have not seen this tier of school
   if (!tiernames.includes(myTierName)) {
-    tiernames.push(tiername);
-    heatmap_data.push( {tierName: mytiername},
+    tiernames.push(myTierName);
+    heatmapData.push( {tierName: myTierName},
       {parMedian: [entry.par_median]}, {femaleRatio: [entry.female]});
+    //console.log("Current tier", heatmapData.tierName);
+    console.log(heatmapData);
   }
+  // if we have already seen this tier of school
   else {
-    heatmapData[entry.tier_name].values.push(entry.value);
-  }
+    //heatmapData[myTierName].parMedian.push(entry.par_median);
+    //heatmapData[myTierName].femaleRatio.push(entry.female);
 
-});
+    heatmapData.find(item => {
+      if (item == myTierName) {
+        console.log("item in heatmapData: ", heatmapData.item);
+        heatmapData.item.parMedian.push(entry.par_median);
+        heatmapData.femaleRatio.push(entry.female);
+        console.log("heatmapData", heatmapData);
+      }
+    });
+
+
+    // heatmapData[myTierName].parMedian.push(entry.par_median);
+    // heatmapData.femaleRatio.push(entry.female);
+  }
+  console.log()
+  //console.log("heatmapData: ", heatmapData);
+  //console.log("heatmapData[0]", heatmapData[0]);
+  return heatmapData;
+}
+
+// });
 
 
 // time to standardize
 // for every object/tiername in
-heatmapData.forEach( function(object) {
-  let avg = d3.mean(object.parMedian, function(d) {return d.value})
-  let std = d3.deviation(object.parMedian, function(d) {return d.value})
+function toStandardize(heatmapData) {
+  console.log("heatmapData in standardize: ", heatmapData);
+  heatmapData.forEach( function(object) {
+    //console.log("object", object);
+    let avg = d3.mean(object.parMedian); //, function(d) {return d.value})
+    let std = d3.deviation(object.parMedian); //function(d) {return d.value})
 
-  object.values.forEach(function(row) {
-    row.value = (row.value - avg)/std
+    object.values.forEach(function(row) {
+      row.value = (row.value - avg)/std
+    })
+    console.log("Inside heatmapData for each loop");
+
   });
+
+}
+
+
 
   // Build X scales and axis:
 console.log("Before building x sclaes");
-var x = d3.scaleLinear()
+var x = d3.scaleLinear();
+x
     .range([0, width])
-    .domain(-3, 3.5) // from tableau
-    .padding(0.01);
+    .domain(-3, 3.5); // from tableau
+    //.padding(0.01);
 
 heatMapSVG.append("g")
     .attr("transform", translate(0, height))
@@ -73,7 +118,7 @@ heatMapSVG.append("g")
 // Build X scales and axis:
 var y = d3.scaleBand()
   .range([ height, 0 ])
-  .domain(tiernames)
+  //.domain(tiernames)
   .padding(0.01);
 
 heatMapSVG.append("g")
