@@ -30,12 +30,40 @@ heatMapSVG
   // add plot region
 const heatMapPlot = heatMapSVG.append("g").attr("id", "plot");
 
+dataset = d3.csv("CAselectedCols.csv");
+console.log("dataset: ", dataset);
+heatmapData = [];
+tiernames = [];
+
+dataset.forEach( function (entry) {
+  let myTierName = entry.tier_name
+  if (!tiernames.includes(myTierName)) {
+    tiernames.push(tiername);
+    heatmap_data.push( {tierName: mytiername},
+      {parMedian: [entry.par_median]}, {femaleRatio: [entry.female]});
+  }
+  else {
+    heatmapData[entry.tier_name].values.push(entry.value);
+  }
+
+});
+
+
+// time to standardize
+// for every object/tiername in
+heatmapData.forEach( function(object) {
+  let avg = d3.mean(object.parMedian, function(d) {return d.value})
+  let std = d3.deviation(object.parMedian, function(d) {return d.value})
+
+  object.values.forEach(function(row) {
+    row.value = (row.value - avg)/std
+  });
 
   // Build X scales and axis:
 console.log("Before building x sclaes");
-var x = d3.scaleBand()
+var x = d3.scaleLinear()
     .range([0, width])
-    .domain(0, 1)
+    .domain(-3, 3.5) // from tableau
     .padding(0.01);
 
 heatMapSVG.append("g")
@@ -45,14 +73,14 @@ heatMapSVG.append("g")
 // Build X scales and axis:
 var y = d3.scaleBand()
   .range([ height, 0 ])
-  .domain(myVars)
+  .domain(tiernames)
   .padding(0.01);
 
 heatMapSVG.append("g")
   .call(d3.axisLeft(y));
 
 const fill = d3.scaleDiverging(d3.interpolatePuOr)
-  .domain([0.0206, (0.0206 + 0.9946)/2,0.9946]);
+  .domain([-3.5, 0, 3]);
 
   // values provided by Tableau
 
@@ -66,82 +94,80 @@ plot.append("g").append("text")
      .text("Wowow");
 console.log("After title");
 
-// loading dataset
-d3.csv("CAselectedCols.csv", convertRow).then(draw);
+// // loading dataset
+// d3.csv("CAselectedCols.csv", convertRow).then(draw);
+//
+// /**
+// Converts each row into either an integer or a float or a string
+// */
+// function convertRow(row) {
+//
+//   let keep = {};
+//   keep.name = row["name"];
+//   keep.type = +row["type"];
+//   keep.tier = +row["tier"];
+//   keep.tierName = row["tier_name"];
+//   keep.cohortCount = +row["count"];
+//   keep.kidsMedian = +row["k_median"];
+//   keep.parentMedian = +row["par_median"];
+//   keep.femaleRatio = parseFloat(row["female"]);
+//   console.log(keep.length);
+//   return keep;
+// }
 
-/**
-Converts each row into either an integer or a float or a string
-*/
-function convertRow(row) {
-
-  let keep = {};
-  keep.name = row["name"];
-  keep.type = +row["type"];
-  keep.tier = +row["tier"];
-  keep.tierName = row["tier_name"];
-  keep.cohortCount = +row["count"];
-  keep.kidsMedian = +row["k_median"];
-  keep.parentMedian = +row["par_median"];
-  keep.femaleRatio = parseFloat(row["female"]);
-  console.log(keep.length);
-  return keep;
-}
 
 
+
+//
+//
+// function getAllTiernames()
+//
+// tiernames = []
+// heatmapData = [
+//   {
+//     tiername: "Four year for profit",
+//     parMedian: [MANY values],
+//     femaleRatio: [Many values]
+//   }
+//   {
+//     tiername: "2 year for profit",
+//     parMedian: [Many values],
+//     female: [Many values]
+//   }
+//   ...
+// ]
+//
+// dataset = d3.csv(CAselectedCols.csv)
+// heatmapData = []
+// tiernames = []
+//
+// // entry = row
+// dataset.forEach(entry):
+//   let myTierName = entry.tier_name
+//   if !tiernames.contains(myTierName):
+//     tiernames.push(tiername)
+//     heatmap_data.push( {tierName: mytiername},
+//       {parMedian: [entry.par_median]}, {femaleRatio: [entry.female]})
+//   else
+//     heatmapData[entry.tier_name].values.push(entry.value)
+//
+// // time to standardize
+// // for every object/tiername in
+// heatmapData.forEach( function(object)) {
+//   let avg = d3.mean(thing.parMedian), function(d) {return d.value})
+//   let std = d3.deviation(thing.parMedian), function(d) {return d.value})
+//
+//   object.values.forEach(funcion(row)) {
+//   row.value = (row.value - avg)/std
+// }
+//
+//
+//
+// }
+console.log("end of heatmap.js!");
 /*
  * returns a translate string for the transform attribute
  */
 function translate(x, y) {
   return 'translate(' + String(x) + ',' + String(y) + ')';
 }
-
-
-/*
-function getAllTiernames
-
-tiernames = []
-heatmapData = [
-  {
-    tiername: "Four year for profit",
-    parMedian: [MANY values],
-    femaleRatio: [Many values]
-  }
-  {
-    tiername: "2 year for profit",
-    parMedian: [Many values],
-    female: [Many values]
-  }
-  ...
-]
-
-dataset = d3.csv(CAselectedCols.csv)
-heatmapData = []
-tiernames = []
-
-// entry = row
-for each entry in dataset:
-  let myTierName = entry.tier_name
-  if !tiernames.contains(myTierName):
-    tiernames.push(tiername)
-    heatmap_data.push( {tierName: mytiername},
-      {parMedian: [entry.par_median]}, {femaleRatio: [entry.female]})
-  else
-    heatmapData[entry.tier_name].values.push(entry.value)
-
-// time to standardize
-// for every object/tiername in
-heatmapData.forEach( function(object)) {
-  let avg = d3.mean(thing.parMedian), function(d) {return d.value})
-  let std = d3.deviation(thing.parMedian), function(d) {return d.value})
-
-  object.values.forEach(funcion(row)) {
-  row.value = (row.value - avg)/std
-}
-
-
-
-}
-
-
-
-*/

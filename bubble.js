@@ -278,7 +278,7 @@ function convertRow(row) {
 }
 
 function draw(data) {
-  console.log(data);
+  //console.log(data);
   // Okay I could have filtered for only CA colleges by writing
   // data = data.filter(row => row.state === "CA");
   // but whatever
