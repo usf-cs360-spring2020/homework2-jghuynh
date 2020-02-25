@@ -245,6 +245,8 @@ function drawCircleLegend() {
   // we have to select what was drawn and then move it around
 }
 
+// Draws a title for whole plot
+// help: http://www.d3noob.org/2013/01/adding-title-to-your-d3js-graph.html
 function drawBigTitle() {
   svg.append("text")
         .attr("x", (width / 2))
@@ -276,6 +278,7 @@ function convertRow(row) {
 }
 
 function draw(data) {
+  console.log(data);
   // Okay I could have filtered for only CA colleges by writing
   // data = data.filter(row => row.state === "CA");
   // but whatever
