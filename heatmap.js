@@ -84,14 +84,21 @@ function addToMap (entry) {
 // for every object/tiername in
 function toStandardize(heatmapData) {
   console.log("heatmapData in standardize: ", heatmapData);
-  heatmapData.forEach( function(object) {
+  // for every object in heatmapData..
+  console.log("heatmapData[0]", heatmapData[0]);
+  heatmapData[0].forEach( function(object) {
     //console.log("object", object);
+    console.log("object: ", object);
     console.log("object.parMedian: ", heatmapData[0][0].parMedian);
-    let avg = d3.mean(object.parMedian); //, function(d) {return d.value})
-    let std = d3.deviation(object.parMedian); //function(d) {return d.value})
+    let avgParMedian = d3.mean(object.parMedian); //, function(d) {return d.value})
+    let stdParMedian = d3.deviation(object.parMedian); //function(d) {return d.value})
 
-    object.values.forEach(function(row) {
-      row.value = (row.value - avg)/std
+    let avgFemaleRatio = d3.mean(object.femaleRatio);
+    let stdFemaleRatio = d3.deviation(object.femaleRatio);
+
+    object.parMedian.forEach(function(row) {
+      row.parMedian = (row.parMedian - avgParMedian)/stdParMedian
+
     })
     console.log("Inside heatmapData for each loop");
 
@@ -128,7 +135,7 @@ const fill = d3.scaleDiverging(d3.interpolatePuOr)
   // values provided by Tableau
 
 // chart title
-plot.append("g").append("text")
+heatMapPlot.append("g").append("text")
      // .attr("x", (plotWidth / 2) + margin.left - 50)
      .attr("x", (width / 2) + margin.left)
      .attr("y", margin.top)
