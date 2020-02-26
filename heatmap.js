@@ -30,11 +30,7 @@ heatMapSVG
   // add plot region
 const heatMapPlot = heatMapSVG.append("g").attr("id", "plot");
 
-dataset = d3.csv("CAselectedCols.csv", addToMap).then(
-  function (data) {
-    console.log("in the then function");
-  }
-);
+dataset = d3.csv("CAselectedCols.csv", addToMap).then(toStandardize);
 // anotherset = d3.csv("CAselectedCols.csv").then(function(data) {
 //   console.log(anotherset);
 // });
@@ -51,31 +47,32 @@ function addToMap (entry) {
   // if we have not seen this tier of school
   if (!tiernames.includes(myTierName)) {
     tiernames.push(myTierName);
-    heatmapData.push( {tierName: myTierName},
-      {parMedian: [entry.par_median]}, {femaleRatio: [entry.female]});
+    heatmapData.push( {tierName: myTierName,
+      parMedian: [entry.par_median], femaleRatio: [entry.female]});
     //console.log("Current tier", heatmapData.tierName);
-    console.log(heatmapData);
+    //console.log(heatmapData);
   }
   // if we have already seen this tier of school
   else {
     //heatmapData[myTierName].parMedian.push(entry.par_median);
     //heatmapData[myTierName].femaleRatio.push(entry.female);
 
-    heatmapData.find(item => {
-      if (item == myTierName) {
-        console.log("item in heatmapData: ", heatmapData.item);
-        heatmapData.item.parMedian.push(entry.par_median);
-        heatmapData.femaleRatio.push(entry.female);
-        console.log("heatmapData", heatmapData);
-      }
-    });
+    index = heatmapData.findIndex(item =>
+      item.tierName == myTierName);
+    //console.log("index:", index);
+    //console.log(heatmapData[index]);
+      //console.log("item in heatmapData: ", heatmapData.item.parMedian);
+      heatmapData[index].parMedian.push(entry.par_median);
+      heatmapData[index].femaleRatio.push(entry.female);
+    };
 
 
     // heatmapData[myTierName].parMedian.push(entry.par_median);
     // heatmapData.femaleRatio.push(entry.female);
-  }
-  console.log()
-  //console.log("heatmapData: ", heatmapData);
+  //console.log("heatmapData", heatmapData);
+  // console.log("heatmapData.parMedian", heatmapData.find(obj =>
+  //   obj.parMedian > 0);
+  // );
   //console.log("heatmapData[0]", heatmapData[0]);
   return heatmapData;
 }
@@ -89,6 +86,7 @@ function toStandardize(heatmapData) {
   console.log("heatmapData in standardize: ", heatmapData);
   heatmapData.forEach( function(object) {
     //console.log("object", object);
+    console.log("object.parMedian: ", heatmapData[0][0].parMedian);
     let avg = d3.mean(object.parMedian); //, function(d) {return d.value})
     let std = d3.deviation(object.parMedian); //function(d) {return d.value})
 
