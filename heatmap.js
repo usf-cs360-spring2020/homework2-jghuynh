@@ -47,8 +47,15 @@ function addToMap (entry) {
   // if we have not seen this tier of school
   if (!tiernames.includes(myTierName)) {
     tiernames.push(myTierName);
-    heatmapData.push( {tierName: myTierName,
-      parMedian: [entry.par_median], femaleRatio: [entry.female]});
+    heatmapData.push(
+      {
+        tierName: myTierName,
+        parMedian: [entry.par_median],
+        femaleRatio: [entry.female],
+        standardizedParMedian: [],
+        standardizedFemaleRatio: []
+      }
+    );
     //console.log("Current tier", heatmapData.tierName);
     //console.log(heatmapData);
   }
@@ -89,20 +96,35 @@ function toStandardize(heatmapData) {
   heatmapData[0].forEach( function(object) {
     //console.log("object", object);
     console.log("object: ", object);
-    console.log("object.parMedian: ", heatmapData[0][0].parMedian);
+    //console.log("object.parMedian: ", heatmapData[0][0].parMedian);
     let avgParMedian = d3.mean(object.parMedian); //, function(d) {return d.value})
     let stdParMedian = d3.deviation(object.parMedian); //function(d) {return d.value})
 
     let avgFemaleRatio = d3.mean(object.femaleRatio);
     let stdFemaleRatio = d3.deviation(object.femaleRatio);
 
-    object.parMedian.forEach(function(row) {
-      row.parMedian = (row.parMedian - avgParMedian)/stdParMedian
+    // standardized Par Median
+    // for every parMedian value
+    object.parMedian.forEach( function(myParMedian) {
+      console.log("myParMedian: ", myParMedian);
+      /*
+      new value = (parMedianValue - avgParMedian)/stdParMedian
+      push new value into object.standardizedParMedian
+      */
+      // row.parMedian = (row.parMedian - avgParMedian)/stdParMedian
+      zParMedian = (myParMedian - avgParMedian)/stdParMedian
+      object.standardizedParMedian.push(zParMedian);
+    }) // for Each parMedianValue
 
-    })
-    console.log("Inside heatmapData for each loop");
+
+    object.femaleRatio.forEach( function(myFemaleRatio) {
+      zFemaleRatio = (myFemaleRatio - avgFemaleRatio)/stdFemaleRatio
+      object.standardizedFemaleRatio.push(zFemaleRatio);
+    }) // for each female ratio
+    console.log("Object: ", object);
 
   });
+  console.log(heatmapData[0]);
 
 }
 
