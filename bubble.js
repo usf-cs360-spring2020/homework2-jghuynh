@@ -1,14 +1,14 @@
 const width = 960;
 const height = 500;
 
-const margin = {
+let margin = {
   top: 10,
   bottom: 35,
   left: 45,
   right: 15
 };
 
-const svg = d3.select("svg#bubble");
+var svg = d3.select("svg#bubble");
 console.assert(svg.size() == 1);
 
 // set svg size
@@ -16,10 +16,10 @@ svg.attr("width", width);
 svg.attr("height", height);
 
 // add plot region
-const plot = svg.append("g").attr("id", "plot");
+let plot = svg.append("g").attr("id", "plot");
 
 // Set up scales
-const scales = {
+let scales = {
   x: d3.scaleLinear(),
   y: d3.scaleLinear(),
   // do not linearly scale radius...
