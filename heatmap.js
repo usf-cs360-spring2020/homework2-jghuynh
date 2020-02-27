@@ -30,14 +30,18 @@ heatMapSVG
   // add plot region
 const heatMapPlot = heatMapSVG.append("g").attr("id", "plot");
 
-dataset = d3.csv("CAselectedCols.csv", addToMap).then(toStandardize);
+dataset = d3.csv("CAselectedCols.csv", addToMap)
+  .then(toStandardize, function(data) {
+    console.log("my dataset: ", data);
+});
+
 // anotherset = d3.csv("CAselectedCols.csv").then(function(data) {
 //   console.log(anotherset);
 // });
 // });
 
 // dataset.forEach( function (entry) {
-console.log("dataset:", dataset);
+//console.log("dataset:", dataset);
 //dataset.forEach( addToMap);
 heatmapData = [];
 tiernames = [];
@@ -72,30 +76,19 @@ function addToMap (entry) {
       heatmapData[index].parMedian.push(entry.par_median);
       heatmapData[index].femaleRatio.push(entry.female);
     };
-
-
-    // heatmapData[myTierName].parMedian.push(entry.par_median);
-    // heatmapData.femaleRatio.push(entry.female);
-  //console.log("heatmapData", heatmapData);
-  // console.log("heatmapData.parMedian", heatmapData.find(obj =>
-  //   obj.parMedian > 0);
-  // );
-  //console.log("heatmapData[0]", heatmapData[0]);
   return heatmapData;
 }
-
-// });
 
 
 // time to standardize
 // for every object/tiername in
 function toStandardize(heatmapData) {
-  console.log("heatmapData in standardize: ", heatmapData);
   // for every object in heatmapData..
-  console.log("heatmapData[0]", heatmapData[0]);
+
+  // so heatmapData is in a horrible format but whatever!
   heatmapData[0].forEach( function(object) {
     //console.log("object", object);
-    console.log("object: ", object);
+
     //console.log("object.parMedian: ", heatmapData[0][0].parMedian);
     let avgParMedian = d3.mean(object.parMedian); //, function(d) {return d.value})
     let stdParMedian = d3.deviation(object.parMedian); //function(d) {return d.value})
@@ -106,7 +99,6 @@ function toStandardize(heatmapData) {
     // standardized Par Median
     // for every parMedian value
     object.parMedian.forEach( function(myParMedian) {
-      console.log("myParMedian: ", myParMedian);
       /*
       new value = (parMedianValue - avgParMedian)/stdParMedian
       push new value into object.standardizedParMedian
@@ -121,22 +113,37 @@ function toStandardize(heatmapData) {
       zFemaleRatio = (myFemaleRatio - avgFemaleRatio)/stdFemaleRatio
       object.standardizedFemaleRatio.push(zFemaleRatio);
     }) // for each female ratio
-    console.log("Object: ", object);
-
+    //console.log("Object: ", object);
+    // TODO: drawfunciton
   });
-  console.log(heatmapData[0]);
+  //console.log(heatmapData[0]);
+  draw(data);
 
 }
 
+function draw(data) {
+  drawHeatMap(data);
+}
 
+function drawHeatMap(data) {
+  console.log("Inside drawHeatMap");
+  svg.selectAll()
+     .data(data)//, function(d) {return d.group+':'+d.variable;})
+     .enter()
+     .append("rect")
+     .attr("x", function(d) { return x(d.group) })
+     .attr("y", function(d) { return y(d.variable) })
+     .attr("width", x.bandwidth() )
+     .attr("height", y.bandwidth() )
+     .style("fill", function(d) { return myColor(d.value)})
+}
 
   // Build X scales and axis:
 console.log("Before building x sclaes");
-var x = d3.scaleLinear();
-x
+var x = d3.scaleLinear()
     .range([0, width])
-    .domain(-3, 3.5); // from tableau
-    //.padding(0.01);
+    .domain([-3, 3.5]); // from tableau
+    // .padding(0.01);
 
 heatMapSVG.append("g")
     .attr("transform", translate(0, height))
@@ -145,8 +152,19 @@ heatMapSVG.append("g")
 // Build X scales and axis:
 var y = d3.scaleBand()
   .range([ height, 0 ])
-  //.domain(tiernames)
+  .domain(tiernames)
   .padding(0.01);
+
+let axis = {};  // axes for data
+axis.x = d3.axisBottom(x);
+axis.x.tickPadding(0);
+
+axis.y = d3.axisLeft(y);
+axis.y.tickPadding(0);
+
+// format the tick labels
+// axis.x.tickFormat(dateFormatter);
+// axis.y.tickFormat(regionFormatter);
 
 heatMapSVG.append("g")
   .call(d3.axisLeft(y));
