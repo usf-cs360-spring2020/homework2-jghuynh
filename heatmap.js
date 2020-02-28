@@ -21,7 +21,7 @@ heatMapConfig.svg.height = 450;
 heatMapConfig.svg.width = heatMapConfig.svg.height * 1.618; // golden ratio
 
 heatMapConfig.margin.top = 10;
-heatMapConfig.margin.right = 10;
+heatMapConfig.margin.right = 20;
 heatMapConfig.margin.bottom = 20;
 heatMapConfig.margin.left = 180;
 
@@ -324,8 +324,8 @@ data = [
 
   cells.attr("x", d => heatMapScale.x(d.standardizedParMedian));
   cells.attr("y", 0); // handled by group transform
-  cells.attr("width", 5);
-  cells.attr("height", 5);
+  cells.attr("width", 2);
+  cells.attr("height", 2);
 
   // cells.attr("width", heatMapScale.x.bandwidth());
   // cells.attr("height", heatMapScale.y.bandwidth());
@@ -367,11 +367,11 @@ drawBigTitle();
 function drawBigTitle() {
   heatMapSVG.append("text")
         .attr("x", (width / 2))
-        .attr("y",  (margin.top / 2 + 9)) // dam the title is waaay to high
+        .attr("y",  (margin.top / 2) + 7) // dam the title is waaay to high
         .attr("text-anchor", "middle")
         .style("font-size", "20px")
         // .style("text-decoration", "underline")
-        .text("Normalized Parents' Median and Female Ratio\t");
+        .text("Standardized Parents' Median and Female Ratio\t");
 }
 
 // heatMapPlot.append("g").append("text")
