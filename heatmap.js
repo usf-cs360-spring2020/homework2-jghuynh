@@ -1,6 +1,4 @@
 
-console.log("width: ", width);
-console.log()
 // const width = 960;
 // const height = 500;
 
@@ -25,7 +23,7 @@ heatMapConfig.svg.width = heatMapConfig.svg.height * 1.618; // golden ratio
 heatMapConfig.margin.top = 10;
 heatMapConfig.margin.right = 10;
 heatMapConfig.margin.bottom = 20;
-heatMapConfig.margin.left = 80;
+heatMapConfig.margin.left = 180;
 
 heatMapConfig.plot.x = heatMapConfig.margin.left;
 heatMapConfig.plot.y = heatMapConfig.margin.top;
@@ -38,16 +36,33 @@ console.log("heatMapConfig.svg:", heatMapConfig.svg);
 // heatMapSVG.attr("height", height);
 
 // setup svg
-let heatMapSVG = d3.select('svg#myHeatMap');
+let heatMapSVG = d3.select("body").select("svg#myHeatMap");
 heatMapSVG.attr('width', heatMapConfig.svg.width);
 heatMapSVG.attr('height', heatMapConfig.svg.height);
 
 console.log("heatMapSVG:", heatMapSVG);
 
 // setup plot area
-let heatMapPlot = svg.append('g');
-plot.attr('id', 'plot');
-plot.attr('transform', translate(heatMapConfig.plot.x, heatMapConfig.plot.y));
+let heatMapPlot = heatMapSVG.append('g');
+heatMapPlot.attr('id', 'plot');
+heatMapPlot.attr('transform', translate(heatMapConfig.plot.x, heatMapConfig.plot.y));
+
+// scales for data
+let heatMapScale = {};
+
+heatMapScale.x = d3.scaleLinear();
+heatMapScale.x.range([0, heatMapConfig.plot.width]);
+
+heatMapScale.y = d3.scaleBand();
+heatMapScale.y.range([heatMapConfig.plot.height, 0]);
+
+let heatMapAxis = {};  // axes for data
+heatMapAxis.x = d3.axisBottom(heatMapScale.x);
+heatMapAxis.x.tickPadding(0);
+
+heatMapAxis.y = d3.axisLeft(heatMapScale.y);
+heatMapAxis.y.tickPadding(0);
+
 // help from:
 // https://www.d3-graph-gallery.com/graph/heatmap_basic.html
 
@@ -194,20 +209,24 @@ function drawHeatMap(data) {
   let zParMedian = data.map(row => row["standardizedParMedian"]);
   console.log("zParMedian:", zParMedian);
 
+
+  heatMapScale.x.domain(zParMedian);
+  heatMapScale.y.domain(tiernames);
+
   //already set up y scales
 
   // draw the x and y axis
- let gx = svg.append("g");
+ let gx = heatMapSVG.append("g");
  gx.attr("id", "x-axis");
  gx.attr("class", "axis");
  gx.attr("transform", translate( heatMapConfig.plot.x,  heatMapConfig.plot.y +  heatMapConfig.plot.height));
- gx.call(axis.x);
+ gx.call(heatMapAxis.x);
 
- let gy = svg.append("g");
+ let gy = heatMapSVG.append("g");
  gy.attr("id", "y-axis");
  gy.attr("class", "axis");
  gy.attr("transform", translate( heatMapConfig.plot.x, heatMapConfig.plot.y));
- gy.call(axis.y);
+ gy.call(heatMapAxis.y);
 
 
 
@@ -215,9 +234,9 @@ function drawHeatMap(data) {
 
   // Build X scales and axis:
 console.log("Before building x sclaes");
-let scale = {}
- scale.x = d3.scaleLinear()
-    .range([0, width]);
+// let scale = {}
+//  scale.x = d3.scaleLinear()
+//     .range([0, width]);
     //.domain([-3, 3.5]); // from tableau
     // .padding(0.01);
 
@@ -225,29 +244,13 @@ let scale = {}
 //     .attr("transform", translate(0, height))
 //     .call(d3.axisBottom(x));
 
-// Build X scales and axis:
-
-scale.y = d3.scaleBand()
-  .range([ height, 0 ])
-  .domain(tiernames)
-  .padding(0.01);
-
-scale.fill = d3.scaleDiverging(d3.interpolatePuOr)
-    .domain([-3.5, 0, 3]);
-
-let axis = {};  // axes for data
-axis.x = d3.axisBottom(scale.x);
-axis.x.tickPadding(0);
-
-axis.y = d3.axisLeft(scale.y);
-axis.y.tickPadding(0);
 
 // format the tick labels
 // axis.x.tickFormat(dateFormatter);
 // axis.y.tickFormat(regionFormatter);
 
-heatMapSVG.append("g")
-  .call(d3.axisLeft(scale.y));
+// heatMapSVG.append("g")
+//   .call(d3.axisLeft(heatMapScale.y));
 
 
 
