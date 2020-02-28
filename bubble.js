@@ -47,8 +47,8 @@ scales.fill.domain([10300, (10300 + 85800)/2, 85800]);
 drawAxis();
 drawTitles();
 drawColorLegend();
-// drawCircleLegend();
 drawBigTitle();
+// drawCircleLegend();
 
 /*
  * create axis lines
