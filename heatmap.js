@@ -47,6 +47,15 @@ let heatMapPlot = heatMapSVG.append('g');
 heatMapPlot.attr('id', 'plot');
 heatMapPlot.attr('transform', translate(heatMapConfig.plot.x, heatMapConfig.plot.y));
 
+// use a rect to illustrate plot area
+let rect = heatMapPlot.append('rect');
+rect.attr('id', 'background');
+
+rect.attr('x', 0);
+rect.attr('y', 0);
+rect.attr('width', heatMapConfig.plot.width);
+rect.attr('height', heatMapConfig.plot.height);
+
 // scales for data
 let heatMapScale = {};
 
@@ -62,6 +71,9 @@ heatMapAxis.x.tickPadding(0);
 
 heatMapAxis.y = d3.axisLeft(heatMapScale.y);
 heatMapAxis.y.tickPadding(0);
+
+// https://github.com/d3/d3-scale-chromatic
+heatMapScale.color = d3.scaleSequential(d3.interpolatePuOr);
 
 // help from:
 // https://www.d3-graph-gallery.com/graph/heatmap_basic.html
@@ -206,12 +218,15 @@ function drawHeatMap(data) {
   console.log("data: ", data);
   console.log("data[0]", data[0]);
   // scales.x.domain(data.standardizedParMedian)
+
+
   let zParMedian = data.map(row => row["standardizedParMedian"]);
   console.log("zParMedian:", zParMedian);
 
 
   heatMapScale.x.domain(zParMedian);
   heatMapScale.y.domain(tiernames);
+  console.log("heatMapScale's X:", heatMapScale);
 
   //already set up y scales
 
@@ -219,7 +234,7 @@ function drawHeatMap(data) {
  let gx = heatMapSVG.append("g");
  gx.attr("id", "x-axis");
  gx.attr("class", "axis");
- gx.attr("transform", translate( heatMapConfig.plot.x,  heatMapConfig.plot.y +  heatMapConfig.plot.height));
+ gx.attr("transform", translate( heatMapConfig.plot.x,  heatMapConfig.plot.y + heatMapConfig.plot.height));
  gx.call(heatMapAxis.x);
 
  let gy = heatMapSVG.append("g");
@@ -229,11 +244,100 @@ function drawHeatMap(data) {
  gy.call(heatMapAxis.y);
 
 
+ // get all of the value objects (with date and value) from the rows
+ /*
+data = [
+  {
+    tierName: "Four Year",
+    parMedian: [many values],
+    femaleRatio: [many values],
+    standardizedParMedian: [many values],
+    standardizedFemaleRatio: [many values]},
+
+  {
+    tierName: "2 Year",
+    parMedian: [],...
+
+  }
+
+
+]
+ */
+ let myValues = [];
+ let myParMedian = [];
+ console.log("data", data);
+ data.forEach((object, i) => {
+   console.log("object", object);
+
+    // console.log("object.zFemaleRatio:", object.standardizedParMedian);
+    object.standardizedFemaleRatio.forEach((myZFemaleRatio, i) => {
+      myValues.push(myZFemaleRatio);
+    });
+
+    object.standardizedParMedian.forEach((myZParMedian, i) => {
+      myParMedian.push(myZParMedian)
+    });
+
+
+    // myValues.push(object.standardizedFemaleRatio);
+
+ });
+ // myValues = [many zFemaleRatio values]
+ // heatMapScale.x.domain(myParMedian); it's now 1 array
+ console.log("myParMedian", myParMedian);
+ // console.log("heatmapScale:", heatMapScale.x);
+ // console.log("myValues", myValues);
+ /*
+ myValues = [many values of z-score female ratio]
+ */
+
+ // calculate the min, max, and median
+  let min = d3.min(myValues);
+  let max = d3.max(myValues);
+  let mid = d3.mean(myValues);
+
+  heatMapScale.color.domain([min, mid, max]);
+
+  // create one group per row
+ let rows = heatMapPlot.selectAll("g.cell")
+   .data(data)
+   .enter()
+   .append("g");
+
+  rows.attr("class", "cell");
+  rows.attr("id", d => "tierName-" + d.tierName);
+  console.log("rows", rows);
+
+  // shift the entire group to the appropriate y-location
+ rows.attr("transform", function(d) {
+   return translate(0, heatMapScale.y(d["tierName"]));
+ });
+
+ // create one rect per cell within row group
+  let cells = rows.selectAll("rect")
+    .data(d => d.standardizedFemaleRatio)
+    .enter()
+    .append("rect");
+
+  console.log("cells:", cells);
+  // looks like every standardizedFemaleRatio has a rect..
+
+  cells.attr("x", d => heatMapScale.x(d.standardizedParMedian));
+  cells.attr("y", 0); // handled by group transform
+  cells.attr("width", 5);
+  cells.attr("height", 5);
+
+  // cells.attr("width", heatMapScale.x.bandwidth());
+  // cells.attr("height", heatMapScale.y.bandwidth());
+
+  // here is the color magic!
+  cells.style("fill", d => heatMapScale.color(d.standardizedFemaleRatio));
+  cells.style("stroke", d => heatMapScale.color(d.standardizedFemaleRatio));
 
 }
 
   // Build X scales and axis:
-console.log("Before building x sclaes");
+// console.log("Before building x sclaes");
 // let scale = {}
 //  scale.x = d3.scaleLinear()
 //     .range([0, width]);
@@ -257,14 +361,27 @@ console.log("Before building x sclaes");
   // values provided by Tableau
 
 // chart title
-heatMapPlot.append("g").append("text")
-     // .attr("x", (plotWidth / 2) + margin.left - 50)
-     .attr("x", (width / 2) + margin.left)
-     .attr("y", margin.top)
-     .attr("text-anchor", "middle")
-     .style("font-size", "24px")
-     .text("");
-console.log("After title");
+drawBigTitle();
+// Draws a title for whole plot
+// help: http://www.d3noob.org/2013/01/adding-title-to-your-d3js-graph.html
+function drawBigTitle() {
+  heatMapSVG.append("text")
+        .attr("x", (width / 2))
+        .attr("y",  (margin.top / 2 + 9)) // dam the title is waaay to high
+        .attr("text-anchor", "middle")
+        .style("font-size", "20px")
+        // .style("text-decoration", "underline")
+        .text("Normalized Parents' Median and Female Ratio\t");
+}
+
+// heatMapPlot.append("g").append("text")
+//      // .attr("x", (plotWidth / 2) + margin.left - 50)
+//      .attr("x", (width / 2) + margin.left)
+//      .attr("y", margin.top)
+//      .attr("text-anchor", "middle")
+//      .style("font-size", "24px")
+//      .text("Map title");
+
 
 // // loading dataset
 // d3.csv("CAselectedCols.csv", convertRow).then(draw);
