@@ -144,11 +144,6 @@
                   nearest $100)
               <br> <b> Par_Median: </b> Median parent household income (rounded to nearest $100)
               <br> <b>Female: </b> Fraction of females out of the entire cohort
-
-
-
-
-
              </p>
 
 
@@ -157,6 +152,11 @@
           <h2>D3 Implementation</h2>
           <!-- Place the svg for our plot.. -->
           <svg id = "bubble"></svg>
+          <p> Size of bubbles indicate the average cohort size. The colors represent
+          the range of the median of kids' earnings per college.
+        <br> As the colleges are more competitive, the median of all the kids' earnings increased.
+      This indicates that people are more likely to earn more money the more prestigious their school is.
+      Class sizes fluctates greatly among different tier colleges.</p>
           <p>Inspiration: Sophie's <a href = https://vizhub.com/jghuynh/10633d32226a47aebb70a0377378e599?edit=files>bubble map </a>
             <br>
             <a href = "http://www.d3noob.org/2013/01/adding-title-to-your-d3js-graph.html">Making title </a>
@@ -176,8 +176,42 @@
            <a href = "https://blockbuilder.org/sjengle/47c5c20a18ec29f4e2b82905bdb7fe95"> Zillow Affordability Heat Map </a></p>
 
           <script src = "heatmap.js"></script>
+
+          <p> The colors on the heat map represent the standardized value of female ratio. </p>
           <h2 id = "Acknowledgements"> Acknowledgements </h2>
           <p> Special thanks to Sophie's <a href = https://vizhub.com/jghuynh/10633d32226a47aebb70a0377378e599?edit=files>bubble map </a> example!</p>
+
+          <h2 id = "Grade"> Grade </h2>
+          <div class="table-container">
+         <table class="table is-hoverable">
+           <!-- the top row of data table -->
+           <thead>
+             <!-- the column names -->
+             <tr>
+               <th>Letter</th>
+               <th>Description</th>
+             </tr>
+           </thead>
+           <tbody>
+             <!-- Rows -->
+             <tr>
+               <!-- Row 1 -->
+               <!-- th = bold font, td = not bold font -->
+               <th>D</th>
+               <td>Drew a bubble map</td>
+
+             </tr>
+
+             <tr>
+               <th>C </th>
+               <td>Drew part of heat map</td>
+             </tr>
+
+
+
+         </table>
+       </div>
+
           <h2 id="about">About</h2>
           <!-- Just a header called "About", id = about -->
        <!-- Profile box -->
