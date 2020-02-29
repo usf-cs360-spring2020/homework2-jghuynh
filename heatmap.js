@@ -305,7 +305,7 @@ data = [
    .append("g");
 
   rows.attr("class", "cell");
-  rows.attr("id", d => "tierName-" + d.tierName);
+  rows.attr("id", d => "tierName" + d.tierName);
   console.log("rows", rows);
 
   // shift the entire group to the appropriate y-location
